@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class EmployeePayroll {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Accept input as String
+        System.out.print("Enter Employee ID: ");
+        String id = sc.nextLine();
+
+        System.out.print("Enter Basic Salary: ");
+        String basic = sc.nextLine();
+
+        System.out.print("Enter Bonus Amount: ");
+        String bonus = sc.nextLine();
+
+        // Convert String into Wrapper Objects
+        Integer empId = Integer.valueOf(id);
+        Double basicSalary = Double.valueOf(basic);
+        Double bonusAmount = Double.valueOf(bonus);
+
+        // Validation
+        if (basicSalary <= 0) {
+            System.out.println("Invalid Salary! Salary must be greater than 0.");
+        } else {
+
+            double netSalary = basicSalary + bonusAmount;
+
+            System.out.println("\nEmployee ID: " + empId);
+            System.out.println("Basic Salary: " + basicSalary);
+            System.out.println("Bonus Amount: " + bonusAmount);
+            System.out.println("Net Salary: " + netSalary);
+        }
+
+        sc.close();
+    }
+}
